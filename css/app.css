@@ -1,0 +1,787 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding: 100px;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+header.navbar-container {
+    width: 100%;
+    max-width: 100%;
+    height: 8%;
+    margin-inline: auto;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+header.navbar-container .logo img {
+    
+    width: 70px;
+}
+
+header.navbar-container .nav-list ul {
+    padding-left: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+}
+
+header.navbar-container .nav-list li {
+    list-style-type: none;
+    display: inline;
+}
+
+header.navbar-container .nav-list li a {
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: black;
+
+    transition: all 0.2s ease-in-out;
+}
+
+header.navbar-container .nav-list li:hover a {
+    background-color: #38a6bd;
+    color: white;
+}
+
+header {
+    display: inline;
+}
+
+.nav-scrolled {
+    background-color: white;
+    color: black !important;
+}
+
+main {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 2rem 4rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: 1%;
+}
+
+main .about-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10% 10%;
+}
+
+main .about-container .about-description {
+    width: 100%;
+}
+
+main .about-container .about-description .title {
+    margin-block: 0.5rem;
+    font-size: 220%;
+}
+
+main .about-container .about-description p {
+    font-size: 100%;
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+main .about-container .about-description button {
+    padding: 0.8rem 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    /* margin-block-start: 1rem; */
+
+    background-color: #a8d30f;
+
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+main .about-container .about-description button:hover {
+    border: 3px solid #a8d30f;
+    background-color: transparent;
+
+    color: #a8d30f;
+}
+
+main .about-container .about-image {
+    display: flex;
+    width: 100%;
+}
+
+main .about-container .about-image img {
+    width: 100%;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Memusatkan slider */
+    align-items: center;
+    padding: 0 0; /* Memberi ruang di atas dan bawah */
+    background-color: transparent; /* Opsional: warna latar */
+}
+
+.slider {
+    width: 100%;
+    height: 200px; /* Ukuran tinggi slider lebih kecil */
+    display: flex;
+    gap: 1px;
+    overflow: hidden;
+  }
+  
+  .slider img {
+    width: 40%; /* Memperkecil lebar gambar */
+    height: 40%;
+    object-fit: contain; /* Sesuaikan gambar tanpa distorsi */
+    display: inline-block;
+    flex-shrink: 0;
+    animation: slide 35s infinite; /* Mempercepat animasi menjadi 35 detik */
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    7.14% {
+      transform: translateX(-100%);
+    }
+    14.28% {
+      transform: translateX(-200%);
+    }
+    21.42% {
+      transform: translateX(-300%);
+    }
+    28.57% {
+      transform: translateX(-400%);
+    }
+    35.71% {
+      transform: translateX(-500%);
+    }
+    42.85% {
+      transform: translateX(-600%);
+    }
+    50% {
+      transform: translateX(-700%);
+    }
+    57.14% {
+      transform: translateX(-800%);
+    }
+    64.28% {
+      transform: translateX(-900%);
+    }
+    71.42% {
+      transform: translateX(-1000%);
+    }
+    78.57% {
+      transform: translateX(-1100%);
+    }
+    85.71% {
+      transform: translateX(-1200%);
+    }
+    92.85% {
+      transform: translateX(-1300%);
+    }
+    100% {
+      transform: translateX(0); /* Kembali ke gambar pertama */
+    }
+  }
+  
+
+main .experiences-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10% 10%;
+    width: 100%;
+    gap: 3rem;
+}
+
+main article .experiences {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+main article .experiences .experiences-description {
+    width: 100%;
+}
+
+main article .experiences .experiences-description .title {
+    margin-block: 0.5rem;
+    /* margin-top: 70%; */
+    font-size: 220%;
+}
+
+main article .experiences .experiences-description p {
+    font-size: 100%;
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+main article .experiences .experiences-description button:hover {
+    border: 3px solid #a8d30f;
+    background-color: transparent;
+
+    color: #a8d30f;
+}
+
+main article .experiences .experiences-image {
+    width: 100%;
+}
+
+main article .experiences .experiences-image img {
+    width: 100%;
+}
+
+main article .experiences .experiences-description ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+main .projects-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10% 10%;
+    width: 100%;
+    gap: 3rem;
+}
+
+main article .projects{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    align-content: center;
+}
+
+main article .projects .projects-description {
+    width: 100%;
+}
+
+main article .projects .projects-description .title {
+    margin-block: 0.5rem;
+    /* margin-top: 70%; */
+    font-size: 220%;
+}
+
+main article .projects .projects-description p {
+    font-size: 100%;
+    line-height: 1.7rem;
+    text-align: justify;
+}
+
+main article .projects .projects-description button:hover {
+    border: 3px solid #a8d30f;
+    background-color: transparent;
+
+    color: #a8d30f;
+}
+
+main article .projects .projects-image {
+    width: 100%;
+}
+
+main article .projects .projects-image img {
+    width: 100%;
+}
+
+main article .projects .projects-description ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+main aside {
+    position: fixed;
+    inset-block: 0;
+    inset-inline-end: 0;
+}
+
+main aside .social-media {
+    height: 100%;
+    display: flex;
+}
+
+main aside .social-media ul {
+    padding: 1.5rem 1rem;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin: auto;
+    background-color: #38a6bd;
+    color: white;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+main aside .social-media li {
+    list-style-type: none;
+}
+
+main aside .social-media li a {
+    /* text-decoration: none; */
+    font-size: 1.1rem;
+    color: white;
+
+    transition: all 0.1s ease-in-out;
+}
+
+main aside .social-media li a:hover {
+    color: #89b0d9;
+}
+
+/* Medium devices (768px dan di bawahnya) */
+@media screen and (max-width: 768px) {
+    header.navbar-container {
+        flex-direction: column;
+    }
+
+    header.navbar-container .nav-list ul {
+        flex-wrap: wrap;
+        column-gap: 0.5rem;
+    }
+
+    main {
+        padding: 1rem 3rem;
+        
+    }
+
+    main .about-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    main .about-container .about-description .title {
+        font-size: 3rem;
+    }
+
+    main .about-container .about-description p {
+        font-size: 1rem;
+    }
+
+    main .about-container .about-image {
+        order: -1;
+    }
+
+    .slider-container {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center; /* Memusatkan slider */
+        align-items: center;
+        padding: 10px 0; /* Memberi ruang di atas dan bawah */
+        background-color: transparent; /* Opsional: warna latar */
+    }
+    
+    .slider {
+        display: flex;
+        gap: 15px; /* Memberi jarak antar gambar */
+        align-items: center; /* Gambar sejajar vertikal */
+        animation: slide 20s linear infinite; /* Gerakan animasi */
+    }
+    
+    .slider img {
+        width: 50px; /* Ukuran gambar seragam */
+        height: 50px;
+        object-fit: contain; /* Gambar tidak terpotong atau distorsi */
+        flex-shrink: 0; /* Gambar tidak menyusut */
+        margin: 0;
+    }
+    
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+    
+      
+
+main .experiences-container {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+main .experiences .experiences-description .title {
+    font-size: 3rem;
+}
+
+main .experiences .experiences-description p {
+    font-size: 1rem;
+}
+
+main .experiences .experiences-image {
+    order: -1;
+}
+
+main .projects-container {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 10%;
+}
+
+main .projects-container .projects-description .title {
+    font-size: 3rem;
+}
+
+main .projects-container .projects-description p {
+    font-size: 1rem;
+}
+
+main .projects-container .projects-image {
+    order: -1;
+}
+}
+
+footer {
+    /* padding: 20px;
+  margin-bottom: 0; */
+    color: black;
+    /* background-color: #a8d30f; */
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer p {
+    display: flex;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-bottom: 0%;
+    unicode-bidi: isolate;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+footer .background-image {
+    margin-top: 0%;
+}
+
+main .hero .hero-text button {
+    padding: 0.8rem 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    margin-block-start: 1rem;
+    text-align: center;
+    position: relative; /* Changed to relative from absolute */
+    top: auto; /* Remove fixed positioning */
+    left: auto; /* Remove fixed positioning */
+    transform: none; /* Remove fixed positioning */
+    color: white;
+    background-color: #61c7d5;
+
+    text-transform: uppercase;
+    font-size: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+main .hero .hero-text button:hover {
+    border: 3px solid #61c7d5;
+    background-color: transparent;
+    color: #61c7d5;
+}
+
+.hero {
+    background-image: url('assets/img/herobanner.png');
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding: 0 8%; /* Ensures padding is included in total height */
+}
+
+/* Example Hero Text Styling */
+
+.hero .hero-text p {
+    font-size: 100%;
+    margin-bottom: 1%;
+}
+
+.hero .hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    width: 100%;
+    margin-bottom: 30%;
+}
+
+.hero .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.hero .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .hero-text h1 {
+    font-size: 400%;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 2px #000;
+    z-index: 1;
+    font-family: 'Anton SC', sans-serif;
+    font-weight: bold;
+}
+
+.hero .hero-text p {
+    font-size: 120%;
+    margin-bottom: 1%;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+    z-index: 1;
+}
+
+.hero .hero-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Hero Button Styling */
+main .hero .hero-text button {
+    padding: 0.8rem 2.5rem;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    margin-block-start: 1rem;
+    text-align: center;
+    position: relative;
+    color: white;
+    background-color: #38a6bd;
+    font-family: 'Quicksand', sans-serif;
+    text-transform: uppercase;
+    font-size: 100%;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+main .hero .hero-text button:hover {
+    border: 3px solid #38a6bd;
+    background-color: transparent;
+    color: #38a6bd;
+}
+
+.toggle-popup, .close-popup {
+    display: none;
+}
+
+/* Styling untuk pop-up */
+.popup {
+    color: white;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #ffffff;
+    background-color: rgb(26, 102, 0);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 1);
+    z-index: 1000;
+    width: 30%;
+    text-align: center;
+}
+
+.popup p {
+    color: white
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tampilkan pop-up saat checkbox dicentang */
+.toggle-popup:checked ~ .popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sembunyikan pop-up saat close-popup dicentang */
+.close-popup:checked ~ .popup {
+    display: none;
+}
+
+.popup .close {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Hamburger di pojok kiri dan background pada navbar */
+@media screen and (max-width: 768px) {
+    /* Posisi hamburger di pojok kiri */
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 2000;
+        background-color: #38a6bd;
+        border-radius: 50%;
+        padding: 12px;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Menu navbar saat hamburger diklik */
+    header.navbar-container .nav-list {
+        display: none; /* Sembunyikan menu navbar di awal */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8); /* Background semi-transparan */
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2rem;
+        gap: 1rem;
+        text-align: left;
+        z-index: 1000;
+        transition: transform 0.3s ease; /* Animasi transisi */
+        transform: translateX(-100%); /* Menyembunyikan navbar */
+    }
+
+/* Menampilkan menu navbar setelah hamburger diklik */
+header.navbar-container .nav-list.show {
+    display: flex;
+    transform: translateX(0); /* Menampilkan navbar */
+}
+
+/* Menambahkan efek transisi pada navbar */
+header.navbar-container .nav-list {
+    transition: transform 0.3s ease; /* Animasi transisi */
+}
+
+    header.navbar-container .nav-list li {
+        padding: 0.5rem 1rem;
+    }
+
+    header.navbar-container .nav-list li a {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Hamburger tidak muncul pada tampilan desktop */
+@media screen and (min-width: 769px) {
+    .hamburger {
+        display: none;  /* Menyembunyikan hamburger pada tampilan desktop */
+    }
+
+    /* Navbar tetap ditampilkan pada tampilan desktop */
+    header.navbar-container .nav-list {
+        display: flex;
+    }
+}
+
+/* Responsif: Gambar berada di atas judul di setiap artikel */
+@media screen and (max-width: 768px) {
+    /* About Section */
+    main .about-container {
+        flex-direction: column; /* Mengubah menjadi kolom */
+        gap: 2rem;
+    }
+
+    main .about-container .about-description {
+        order: 2; /* Judul berada di bawah gambar */
+    }
+
+    main .about-container .about-image {
+        order: 1; /* Gambar berada di atas judul */
+    }
+
+    /* Experiences Section */
+    main .experiences-container {
+        flex-direction: column; /* Mengubah menjadi kolom */
+        gap: 2rem;
+    }
+
+    main article .experiences {
+        flex-direction: column; /* Mengubah menjadi kolom */
+    }
+
+    main article .experiences .experiences-description {
+        order: 2; /* Judul berada di bawah gambar */
+    }
+
+    main article .experiences .experiences-image {
+        order: 1; /* Gambar berada di atas judul */
+    }
+
+    /* Projects Section */
+    main .projects-container {
+        flex-direction: column; /* Mengubah menjadi kolom */
+        gap: 2rem;
+    }
+
+    main article .projects {
+        flex-direction: column; /* Mengubah menjadi kolom */
+    }
+
+    main article .projects .projects-description {
+        order: 2; /* Judul berada di bawah gambar */
+    }
+
+    main article .projects .projects-image {
+        order: 1; /* Gambar berada di atas judul */
+    }
+}
