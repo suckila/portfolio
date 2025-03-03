@@ -81,7 +81,6 @@ main {
     max-width: 1200px;
     margin-inline: auto;
     padding: 2rem 4rem;
-
     display: flex;
     align-items: center;
     flex-direction: column;
