@@ -14,7 +14,41 @@ body {
 
     display: flex;
     flex-direction: column;
-}
+
+    /* background-image: url('assets/img/dots-01.png');
+    background-repeat: repeat;
+    background-size: auto; 
+    background-attachment: fixed; 
+    background-color: #ffffff; 
+    background-image: radial-gradient(circle at 1px 1px, #000000 1px, transparent 0);
+    background-size: 20px 20px; 
+    filter: blur(0.2px) brightness(0.9); */
+  }
+
+/*   
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at 1px 1px, #000000 1px, transparent 0);
+    background-size: 20px 20px;
+    opacity: 0.01; /* Semakin kecil, semakin transparan dots-nya */
+    /* filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
+  } */
+   
+  /* .content {
+    padding: 100px 40px;
+    text-align: center;
+  } */
+
+/* 
+body .background-image {
+    margin-top: 0%;
+} */
 
 header.navbar-container {
     width: 100%;
@@ -86,6 +120,7 @@ main {
     flex-direction: column;
     margin-top: auto;
     margin-bottom: 1%;
+  
 }
 
 main .about-container {
@@ -323,6 +358,8 @@ main article .projects .projects-image img {
     width: 100%;
 }
 
+
+
 main article .projects .projects-description ul {
     display: flex;
     flex-direction: column;
@@ -403,28 +440,84 @@ main aside .social-media li a:hover {
         order: -1;
     }
 
-    .slider-container {
+    @media screen and (max-width: 768px) {
+        .hamburger {
+            display: flex;
+            position: fixed;
+            top: 10px;
+            bottom: auto;
+            right: 10px;
+            background-color: #38a6bd;
+            color: white;
+            font-size: 1rem;
+            border-radius: 50%;
+            padding: 10%;
+            padding-bottom: 10%;
+            cursor: pointer;
+            z-index: 1000;
+            width: 30px;
+            height: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .nav-list {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            /* top: 0;
+            left: 0; */
+            background: white;
+            width: 40%;
+            height: 100%;
+            padding-top: 1rem;
+            z-index: 999;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        .nav-list.show {
+            display: flex;
+        }
+    
+        .nav-list ul {
+            flex-direction: column;
+            width: 100%;
+        }
+    
+        .nav-list li {
+            width: 100%;
+        }
+    
+        .nav-list li a {
+            display: block;
+            padding: 1rem 0.4rem;
+            /* border-bottom: 1px solid #ddd;
+            color: #333; */
+        }
+    }
+
+    /* .slider-container {
         width: 100%;
         overflow: hidden;
         display: flex;
-        justify-content: center; /* Memusatkan slider */
+        justify-content: center;
         align-items: center;
-        padding: 10px 0; /* Memberi ruang di atas dan bawah */
-        background-color: transparent; /* Opsional: warna latar */
+        padding: 10px 0;
+        background-color: transparent; 
     }
     
     .slider {
         display: flex;
-        gap: 15px; /* Memberi jarak antar gambar */
-        align-items: center; /* Gambar sejajar vertikal */
-        animation: slide 20s linear infinite; /* Gerakan animasi */
+        gap: 15px; 
+        align-items: center; 
+        animation: slide 20s linear infinite; /
     }
     
     .slider img {
-        width: 50px; /* Ukuran gambar seragam */
+        width: 50px; 
         height: 50px;
-        object-fit: contain; /* Gambar tidak terpotong atau distorsi */
-        flex-shrink: 0; /* Gambar tidak menyusut */
+        object-fit: contain; 
+        flex-shrink: 0;
         margin: 0;
     }
     
@@ -432,8 +525,39 @@ main aside .social-media li a:hover {
         0% { transform: translateX(0); }
         100% { transform: translateX(-100%); }
     }
-    
+     */
       
+     .slider-container {
+        width: 100%;
+        overflow: hidden;
+        background-color: transparent;
+        padding: 10px 0;
+      }
+      
+      .slider-track {
+        display: flex;
+        width: fit-content;
+        animation: scroll 15s linear infinite;
+      }
+      
+      .slider-track img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        flex-shrink: 0;
+        margin-right: 20px;
+      }
+      
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      
+}
 
 main .experiences-container {
     flex-direction: column;
@@ -468,7 +592,6 @@ main .projects-container .projects-description p {
 
 main .projects-container .projects-image {
     order: -1;
-}
 }
 
 footer {
@@ -747,6 +870,18 @@ header.navbar-container .nav-list {
     }
 }
 
+#typewriter::after {
+    content: '|';
+    animation: blink 1s infinite;
+    color: #fff; /* warna cursor */
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+
 /* Responsif: Gambar berada di atas judul di setiap artikel */
 @media screen and (max-width: 768px) {
     /* About Section */
@@ -799,3 +934,23 @@ header.navbar-container .nav-list {
         order: 1; /* Gambar berada di atas judul */
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    main article .experiences,
+    main article .projects {
+        flex-direction: column;
+    }
+
+    main article .experiences .experiences-image,
+    main article .projects .projects-image {
+        order: -1;
+    }
+
+    main article .experiences .experiences-description,
+    main article .projects .projects-description {
+        order: 1;
+    }
+}
+
+

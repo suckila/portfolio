@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>★portfolio</title>
 
     <!-- My Own CSS -->
@@ -26,12 +26,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<!-- <body>
     <header class="navbar-container">
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo">
         </div>
-        <div class="hamburger" onclick="toggleNavbar()">☰</div> <!-- Tombol Hamburger -->
+        <div class="hamburger" onclick="toggleNavbar()">☰</div> 
         <div class="nav-list">
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -40,14 +40,39 @@
                 <li><a href="#projects">Projects</a></li>
             </ul>
         </div>
-    </header>
-    
-    <script>
+    </header> -->
+    <body>
+        <header class="navbar-container">
+            <div class="logo">
+                <img src="assets/img/logo.png" alt="Logo">
+            </div>
+            <div class="hamburger" onclick="toggleNavbar()">☰</div>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+        </header>
+
+    <!-- <script>
         // Fungsi untuk toggle (menyembunyikan atau menampilkan) navbar
         function toggleNavbar() {
             const navList = document.querySelector('.nav-list');
             navList.classList.toggle('show');
         }
+    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const navList = document.getElementById("nav-list");
+
+            hamburger.addEventListener("click", function () {
+                navList.classList.toggle("show");
+            });
+        });
     </script>
 
 
@@ -55,7 +80,8 @@
         <section id="home" >
             <div class="hero" >
                 <div class="hero-text" >
-                    <h1 data-aos="fade" data-aos-delay="500">「 P 0 R T F O L I ✸ 』</h1>
+                    <!-- <h1 data-aos="fade" data-aos-delay="500">「 P 0 R T F O L I ✸ 』</h1> -->
+                    <h1 id="typewriter" data-aos="fade" data-aos-delay="500"></h1>
                     <p data-aos="fade" data-aos-delay="700">
                     Explore the creative work of Syakila!
                     </p>
@@ -80,6 +106,20 @@
                 <h2>Skills</h2>
                 <div class="slider-container">
                     <div class="slider">
+                      <img src="assets/img/ps.png" alt="Photoshop">
+                      <img src="assets/img/ai.png" alt="Illustrator">
+                      <img src="assets/img/ae.png" alt="After Effects">
+                      <img src="assets/img/figma.png" alt="Figma">
+                      <img src="assets/img/flutter.png" alt="Flutter">
+                      <img src="assets/img/sql.png" alt="PostgreSQL">
+                      <img src="assets/img/html.png" alt="HTML">
+                      <img src="assets/img/css.png" alt="CSS">
+                      <img src="assets/img/canva.png" alt="Canva">
+                      <img src="assets/img/capcut.png" alt="Capcut">
+                      <img src="assets/img/mailchimp.svg" alt="Mailchimp">
+                      <img src="assets/img/google.png" alt="Google Workspace">
+                      <img src="assets/img/microsoft.png" alt="Microsoft Office">
+
                       <img src="assets/img/ps.png" alt="Photoshop">
                       <img src="assets/img/ai.png" alt="Illustrator">
                       <img src="assets/img/ae.png" alt="After Effects">
@@ -253,6 +293,22 @@
             </div>
         </article>
         
+        <article data-aos="fade-up" data-aos-delay="1200">
+            <div class="projects">
+                <div class="projects-description">
+                    <h1 class="title"></h1>
+        
+                    <h2>★ Commission ▬ Poster</h2>
+                    <br>
+                    <p>
+                        I worked on design projects for personal purposes, which included designing mockup and visually appealing posters.
+                    </p>
+                </div>
+                <div class="projects-image" data-aos="zoom-in" data-aos-delay="1300">
+                    <img src="assets/img/freelance2.png" alt="posterdesign" />
+                </div>
+            </div>
+        </article>
 
     <!-- <section class="skills-container" id="skills">
             <div class="skills">
@@ -312,6 +368,51 @@
         </div>
     </footer>
 
+
+    <script>
+        const texts = [
+            "「 P 0 R T F O L I ✸ 』",
+            "Creative Works of Syakila"
+        ];
+    
+        const target = document.getElementById("typewriter");
+        const loopDuration = 5000; // total waktu per teks (ms)
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+    
+        function loopTypewriter() {
+            const currentText = texts[textIndex];
+            const charCount = currentText.length;
+            const typingSpeed = loopDuration / 2 / charCount;
+    
+            target.innerHTML = currentText.substring(0, charIndex);
+    
+            if (!isDeleting) {
+                charIndex++;
+                if (charIndex > charCount) {
+                    isDeleting = true;
+                    setTimeout(loopTypewriter, 500); // jeda sebelum hapus
+                    return;
+                }
+            } else {
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(loopTypewriter, 500); // jeda sebelum ketik teks baru
+                    return;
+                }
+            }
+    
+            setTimeout(loopTypewriter, typingSpeed);
+        }
+    
+        window.addEventListener("DOMContentLoaded", loopTypewriter);
+    </script>
+    
+    
+
     <script src="js/navbar.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -351,6 +452,7 @@
     <script>
         AOS.init();
     </script>
+   
 </body>
 
 </html>
