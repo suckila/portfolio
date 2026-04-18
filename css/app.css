@@ -194,10 +194,10 @@ main .about-container .about-image img {
     width: 100%;
     height: 200px; /* Ukuran tinggi slider lebih kecil */
     display: flex;
-    gap: 1px;
-    row-gap: 1px;
+    /* gap: 1px; */
+    /* row-gap: 1px; */
     align-items: center; /* Gambar sejajar vertikal */
-    column-gap: 0;
+    /* column-gap: 0; */
     overflow: hidden;
   }
   
