@@ -18,7 +18,8 @@ pipeline {
                     echo 'Executing deployment locally on the agent VPS!'
                     echo 'Branch: ${env.BRANCH_NAME}'
                     
-                    cd /var/www/portfolio
+                    cd /var/www/portfolio-prod/portfolio
+
 
                     # Fetch dan pull code terbaru langsung di folder lokal VPS
                     git fetch --all
