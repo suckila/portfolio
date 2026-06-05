@@ -366,6 +366,102 @@ main article .projects .projects-description ul {
     gap: 0.5rem;
 }
 
+/* SLIDER WRAPPER */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+/* TRACK */
+.slider-track {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+/* HIDE SCROLLBAR */
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* IMAGE */
+.slider-track img {
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* DOTS */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.slider-dots span {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider-dots span.active {
+    background: #38a6bd;
+}
+
+@media (max-width: 768px) {
+    main article .projects {
+        flex-direction: column;
+    }
+
+    .projects-image {
+        order: -1;
+    }
+}
+
+/* DEFAULT: arrow hidden */
+.slider-btn {
+    display: none;
+}
+
+/* KHUSUS slider yang pakai arrows */
+.slider-wrapper.with-arrows .slider-btn {
+    display: flex;
+}
+
+/* STYLE */
+.slider-wrapper.with-arrows .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+/* POSITION */
+.slider-wrapper.with-arrows .prev {
+    left: 10px;
+}
+
+.slider-wrapper.with-arrows .next {
+    right: 10px;
+}
+
 main aside {
     position: fixed;
     inset-block: 0;
