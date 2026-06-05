@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'built-in-node' }
+    agent { label 'agent-kojidev' }
     stages {
         stage('Deploy to VPS') {
             when {
