@@ -7,27 +7,26 @@ pipeline {
             }
             steps {
                 script {
+                    // Mengambil nama branch bersih (misal: 'main')
                     def branchName = "${GIT_BRANCH.replaceFirst(/^.*\//, '')}"
                     echo "Branch name: ${branchName}"
-                    // Store branchName in an environment variable for use in other steps
                     env.BRANCH_NAME = branchName
                 }
-                sshagent(credentials: ['user-vps-kojidev']) {
-                    sh """
-                    ssh -p 45022 -o StrictHostKeyChecking=no kojidev@103.127.132.118 "
-                    echo 'Connected to VPS!'
+                
+                // Langsung eksekusi perintah lokal di VPS karena Agent berada di dalam VPS ini
+                sh """
+                    echo 'Executing deployment locally on the agent VPS!'
                     echo 'Branch: ${env.BRANCH_NAME}'
+                    
                     cd /var/www/portfolio
 
-                    # Fetch and pull the latest code
+                    # Fetch dan pull code terbaru langsung di folder lokal VPS
                     git fetch --all
                     git checkout ${env.BRANCH_NAME}
                     git pull origin ${env.BRANCH_NAME}
 
-                    echo 'Deployed to VPS!'
-                    "
-                    """
-                }
+                    echo 'Deployed successfully to VPS!'
+                """
             }
         }
     }
